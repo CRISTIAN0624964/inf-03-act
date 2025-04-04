@@ -1,0 +1,27 @@
+double potencia(double x, int y) {
+  double t;
+  if (y == 0)
+    return 1.0;
+  if (y % 2 == 1)
+    return x * potencia(x, y - 1);
+  else {
+    t = potencia(x, y / 2);
+    return t * t;
+  }
+}
+
+
+T(y) = T(y-1) + O(1)
+     = T(y-2) + O(1) + O(1)
+     = T(y-3) + O(1) + O(1) + O(1)
+     ...
+     = T(0) + O(y)
+
+
+T(y) = T(y/2) + O(1)
+     = T(y/4) + O(1) + O(1)
+     = T(y/8) + O(1) + O(1) + O(1)
+     ...
+     = T(1) + O(log y)
+
+
